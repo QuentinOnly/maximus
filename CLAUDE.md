@@ -2,6 +2,15 @@
 
 Agent de planification personnel de Quentin (Onlynnov) : ne rien perdre, ne rien oublier, ne plus planifier à la main. Les décisions de cadrage complètes sont dans [docs/decisions](docs/decisions/README.md) ; ce fichier en est le résumé opérationnel.
 
+## Méthode
+
+- Au début de chaque session, lire `docs/avancement.md` et dire à Quentin où on en est avant d'agir.
+- Suivre le cycle et les skills indiqués dans `docs/methode.md`.
+- Proposer le bon skill au bon moment, sans attendre qu'il le demande.
+- À la fin de chaque tâche, mettre à jour `docs/avancement.md`, puis proposer une nouvelle session (handoff n'est pas installé : voir `docs/methode.md`).
+- Signaler toute étape sautée ou tout écart à l'ordre du projet.
+- Toute décision prise est ajoutée dans `docs/decisions`.
+
 ## Ce que fait Maximus
 
 - Lit Outlook (mails et agenda), Notion, OneDrive, SharePoint et Wispr Flow.
@@ -43,7 +52,7 @@ Maquette v2 validée (Matin, Soir, Semaine) sur le canvas [Maximus](https://clau
 
 ## Ordre de construction
 
-Le moteur passe avant l'interface : une interface sans données réelles ne se teste pas. Voir [07-plan-de-construction.md](docs/decisions/07-plan-de-construction.md).
+Le moteur passe avant l'interface : une interface sans données réelles ne se teste pas. Les étapes qui font foi sont dans [docs/methode.md](docs/methode.md) ; l'étape en cours est dans [docs/avancement.md](docs/avancement.md).
 
 ## Agent skills
 
