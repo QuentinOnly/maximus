@@ -6,11 +6,9 @@ Dernière mise à jour : 15 octobre 2026.
 
 ## Étape en cours
 
-**Étape 3 : spécification.** Terminé quand une spec est dans le dépôt, découpée en lots livrables, et relue par Quentin.
+**Étape 4 : copie Notion et nouveau modèle.** Ticket `.scratch/maximus-v1/issues/01-copie-notion-nouveau-modele.md`. Terminé quand la copie de Roadmap 2026.2 a les nouveaux champs et la base Récurrences, et que la base partagée est intacte.
 
-Grill fait (décision 09, `CONTEXT.md`), spec écrite dans `.scratch/maximus-v1/spec.md`.
-
-Prochaine action : Quentin relit la spec, puis `/to-tickets` dans la même session pour la découper en tickets.
+Prochaine action : ouvrir une nouvelle session, lire ce fichier, puis traiter le ticket 01 en mode plan (aucun skill adapté). Le ticket 02 (premier tracé de l'analyse) n'a aucun blocage et peut suivre ou se faire en parallèle.
 
 ## Fait
 
@@ -23,15 +21,14 @@ Prochaine action : Quentin relit la spec, puis `/to-tickets` dans la même sessi
 - **Méthode** reprise dans `docs/methode.md`, avec le skill à invoquer à chaque étape et à chaque temps du cycle.
 - Claude Code à jour : version 2.1.300 (le cadrage demandait de mettre à jour la 2.1.114).
 - **Grill du périmètre V1** : décision 09 (V1 complète sauf Khadidiatou, lancement manuel, aucun envoi de mail, migration avancée en étape 7, dossier de données `OneDrive - ONLYNNOV\maximus\` créé), glossaire `CONTEXT.md`, `CLAUDE.md` et `docs/methode.md` alignés.
-- **Spec V1** écrite : `.scratch/maximus-v1/spec.md` (109 user stories, deux points de test : planificateur et API locale).
+- **Étape 3 : spécification.** Spec `.scratch/maximus-v1/spec.md` (deux points de test : planificateur et API locale), relue par Quentin, complétée par la décision 10 (garde-fous de l'analyse), découpée en 24 tickets dans `.scratch/maximus-v1/issues/` avec leurs blocages.
 - **Points en suspens tranchés** (décision 08) : pas de handoff, logo-design désinstallé, règles Git écrites dans `CLAUDE.md` à la place du garde-fou, `.gitignore` créé (dépendances, secrets, données de Maximus).
 
 ## Reste à faire
 
-Ordre révisé par la décision 09.
+Ordre révisé par la décision 09. Tickets 01 à 24 dans `.scratch/maximus-v1/issues/`.
 
-3. Spécification (en cours : relecture, puis tickets).
-4. Copie Notion de Roadmap 2026.2, nouveau modèle de données, base Récurrences.
+4. Copie Notion de Roadmap 2026.2, nouveau modèle de données, base Récurrences (en cours, ticket 01).
 5. Moteur du matin, en lecture seule.
 6. Écritures validées sur la copie, page brute de validation.
 7. Migration de la base partagée.
