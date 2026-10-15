@@ -34,3 +34,5 @@ Validé (écran Statuts du canvas) :
 L'avancement est toujours affiché en icône, le délai seulement en cas de problème. Jauges de pression et de charge : neutre sous 50 %, ambre de 50 à 80 %, rouge au-delà ou en cas de retard. Chaque couleur est doublée d'une icône et d'un libellé. Pas de bleu pour les statuts : il reste réservé à ce qui est cliquable.
 
 Réunions, Traçabilité, Récurrences et Réglages ne sont pas maquettés : ils reprendront les mêmes composants dans le code.
+
+Avatars : remplacée par la 09, Khadidiatou est hors V1.

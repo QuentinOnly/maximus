@@ -20,3 +20,9 @@ L'agent propose, Quentin valide : aucune écriture sans clic, aucune modificatio
 | Capacité | Lundi en télétravail : 9 h à 12 h et 13 h 30 à 17 h. Mardi à vendredi au bureau : 9 h à 12 h 30 et 13 h 30 à 18 h. |
 | Semaine | Recalculée chaque jour, plus un bouton « Planifier la semaine ». |
 | Retour d'absence | Tout est traité, rien n'est résumé à la place, présenté trié par urgence. |
+
+Récurrences : remplacée par la 09 (instances proposées et validées en lot, plus de création automatique).
+
+Wispr (actions de Khadidiatou) : remplacée par la 09, Khadidiatou est hors V1.
+
+Rituel du matin (lancement à l'ouverture de session) : remplacé par la 09, lancement manuel.

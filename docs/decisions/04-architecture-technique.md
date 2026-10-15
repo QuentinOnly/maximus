@@ -20,3 +20,5 @@ Tests réalisés le 15 octobre 2026 :
 2. Mode automatique (`claude -p`) : Outlook lu sans fenêtre et sans blocage de permission, heure de Paris correcte.
 
 Vercel n'est pas retenu : l'offre gratuite exclut tout usage commercial, y compris un outil interne développé par un salarié.
+
+Déclenchement : remplacé par la 09, lancement manuel depuis l'application, plus de tâche planifiée Windows.

@@ -10,5 +10,6 @@ Reprise du document « Maximus : décisions de cadrage » du 15 octobre 2026 (Qu
 6. [Inconnues et questions ouvertes](06-inconnues-et-questions-ouvertes.md)
 7. [Plan de construction](07-plan-de-construction.md)
 8. [Outillage et règles Git](08-outillage-et-git.md) (15 octobre 2026)
+9. [Périmètre de la V1](09-perimetre-v1.md) (15 octobre 2026, révise les 02, 04, 05 et 06)
 
 Toute nouvelle décision ou révision s'ajoute ici, datée, plutôt que de réécrire l'historique en silence.

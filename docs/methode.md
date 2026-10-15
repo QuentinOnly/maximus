@@ -50,7 +50,7 @@ Pour un grill, laisse le mode plan désactivé : il pousse Claude à produire un
 
 ## Les étapes du projet
 
-Une session par ligne. Ne passe à la suivante que lorsque le critère de fin est atteint. L'étape en cours est notée dans `docs/avancement.md`.
+Ordre révisé par la décision 09 (migration avancée, lancement manuel). Une session par ligne. Ne passe à la suivante que lorsque le critère de fin est atteint. L'étape en cours est notée dans `docs/avancement.md`.
 
 | # | Session | Terminé quand | Skill à invoquer |
 |---|---|---|---|
@@ -59,14 +59,15 @@ Une session par ligne. Ne passe à la suivante que lorsque le critère de fin es
 | 3 | Spécification avec `to-spec` | Une spec dans le dépôt, découpée en lots livrables, relue par toi | `/grill-with-docs`, puis `/to-spec`, puis `/to-tickets` |
 | 4 | Copie Notion et nouveau modèle | La copie de Roadmap 2026.2 a les nouveaux champs et la base Récurrences, la base partagée est intacte | Aucun skill adapté : cycle normal avec le mode plan |
 | 5 | Moteur du matin, en lecture seule | Une analyse réelle de ta matinée, propositions affichées, rien écrit nulle part | `/implement` (avec `/tdd`), `/prototype` si la logique de tri doit être testée avant |
-| 6 | Écritures validées | Une tâche créée dans la copie Notion après ton clic, test écrit en mode automatique | `/implement` (avec `/tdd`), `/diagnosing-bugs` si l'écriture en mode automatique échoue |
-| 7 | Logo | Un logo validé, décliné en icône pour la bulle et la barre latérale | Aucun skill installé : réauditer `logo-design` avant de le réinstaller (décision 08) |
-| 8 | Tableau de bord local | Les écrans Matin, Soir et Semaine fonctionnent avec tes vraies données | `/prototype` pour comparer des variantes d'écran, puis `/implement` |
-| 9 | Chat | Créer une tâche et retrouver une action passée marchent depuis la bulle | `/implement` (avec `/tdd`) |
-| 10 | Débrief du soir et tâche planifiée | Le rituel complet tourne seul à l'ouverture de session | `/implement` (avec `/tdd`) |
-| 11 | Semaine d'essai | Cinq jours d'usage réel sur la copie, ajustements faits, puis migration de la base partagée | `/diagnosing-bugs` pour chaque anomalie, `/retro` en fin de semaine |
+| 6 | Écritures validées | Une tâche, un créneau et un brouillon créés sur la copie Notion et dans Outlook après ton clic dans la page brute | `/implement` (avec `/tdd`), `/diagnosing-bugs` si l'écriture en mode non interactif échoue |
+| 7 | Migration de la base partagée | Roadmap 2026.2 a les nouveaux champs et la base Récurrences, formules et page de suivi de charge adaptées, l'équipe n'a rien perdu | Aucun skill adapté : cycle normal avec le mode plan |
+| 8 | Logo | Un logo validé, décliné en icône pour la bulle, la barre latérale et le raccourci du bureau | Aucun skill installé : réauditer `logo-design` avant de le réinstaller (décision 08) |
+| 9 | Tableau de bord local | Les écrans Matin, Soir, Semaine, Réunions, Traçabilité, Récurrences et Réglages fonctionnent avec tes vraies données, lancés depuis le raccourci du bureau | `/prototype` pour comparer des variantes d'écran, puis `/implement` |
+| 10 | Chat | Créer une tâche et retrouver une action passée marchent depuis la bulle | `/implement` (avec `/tdd`) |
+| 11 | Débrief du soir | Le débrief lancé à la main enregistre statut, temps réel et ressentis ; le débrief court du lendemain matin fonctionne | `/implement` (avec `/tdd`) |
+| 12 | Semaine d'essai | Cinq jours d'usage réel sur la base partagée, ajustements faits | `/diagnosing-bugs` pour chaque anomalie, `/retro` en fin de semaine |
 
-Aux étapes 5 à 10, la relecture du code se fait avec `/mattpocock-skills:code-review` avant le commit.
+Aux étapes 5, 6 et 9 à 11, la relecture du code se fait avec `/mattpocock-skills:code-review` avant le commit.
 
 ## Skills disponibles
 
@@ -105,8 +106,8 @@ Copiés depuis mattpocock/skills, version 1.2.3 (commit `c55ee46`), audités le 
 
 Maximus lit tes mails et peut écrire dans Notion et Outlook : les erreurs ont des conséquences réelles. Cinq règles.
 
-1. **Tests sur la copie Notion uniquement**, jamais sur Roadmap 2026.2 tant que la semaine d'essai n'est pas terminée.
-2. **Aucun envoi de mail pendant les tests.** Brouillons seulement. Un envoi réel n'arrive qu'en fin de projet, après ton clic.
+1. **Tests sur la copie Notion uniquement**, jamais sur Roadmap 2026.2 avant la migration de l'étape 7 (décision 09).
+2. **Aucun envoi de mail par Maximus.** Brouillons seulement, envoyés par toi depuis Outlook (décision 09).
 3. **Aucune donnée dans GitHub.** Ni contenu de mail, ni transcript, ni fiche réunion : elles vont dans OneDrive. Fais vérifier le fichier `.gitignore` dès la première session de code.
 4. **Aucun secret dans le code.** Pas de mot de passe ni de jeton écrit dans un fichier. Si Claude en propose un, refuse.
 5. **Lis les demandes de permission.** Quand Claude Code demande l'autorisation d'exécuter une commande, lis-la avant d'accepter. N'autorise jamais tout d'office pour la session.

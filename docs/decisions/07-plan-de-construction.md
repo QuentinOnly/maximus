@@ -12,3 +12,5 @@ La suite se fait dans Claude Code, avec ce document comme point de départ du d�
 - [ ] Créer le logo avec le repo
 - [ ] Construire le tableau de bord local et le chat
 - [ ] Une semaine d'usage réel sur la copie, puis migration de la base partagée
+
+Remplacé par `docs/methode.md` (étapes du projet) et la décision 09 (ordre révisé) : ce plan n'est plus tenu à jour.

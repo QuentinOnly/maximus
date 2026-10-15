@@ -10,3 +10,5 @@ Cinq points se vérifient en testant. La dernière question ouverte est tranché
 | Latence du chat | Mesurer le temps de réponse par message, connecteurs inutiles désactivés |
 | Impact de la migration Notion sur l'équipe | Tout tester sur la copie avant la base partagée |
 | Tâche pour Khadidiatou demandée dans le chat | Tranché : créée directement dans Notion à son nom, avec toutes les propriétés. Elle la voit dans son tableau de bord Notion |
+
+Tâche pour Khadidiatou demandée dans le chat : remplacée par la 09, Khadidiatou est hors V1.

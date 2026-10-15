@@ -21,18 +21,20 @@ token*.json
 # Réglages locaux de Claude Code
 .claude/settings.local.json
 
-# Données de Maximus : jamais sur GitHub (elles vivent dans OneDrive)
-data/
-donnees/
-fiches-reunions/
-journal/
-profil-style/
-memoire/
-historique-chat/
-chat/
-exports-mails/
-mails/
-transcripts/
+# Données de Maximus : jamais sur GitHub (elles vivent dans OneDrive - ONLYNNOV\maximus)
+/maximus/
+/data/
+/reunions/
+/fiches-reunions/
+/journal/
+/chat/
+/memoire/
+/comptes-rendus/
+/profil-style.md
+/reglages.json
+/exports-mails/
+/mails/
+/transcripts/
 *.eml
 *.msg
 

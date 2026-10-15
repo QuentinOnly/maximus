@@ -8,7 +8,9 @@ Dernière mise à jour : 15 octobre 2026.
 
 **Étape 3 : spécification.** Terminé quand une spec est dans le dépôt, découpée en lots livrables, et relue par Quentin.
 
-Prochaine action : ouvrir une nouvelle session et lancer `/grill-with-docs` sur le périmètre de la V1, mode plan désactivé. Prolonger la même session par `/to-spec`, puis `/to-tickets`.
+Grill fait (décision 09, `CONTEXT.md`), spec écrite dans `.scratch/maximus-v1/spec.md`.
+
+Prochaine action : Quentin relit la spec, puis `/to-tickets` dans la même session pour la découper en tickets.
 
 ## Fait
 
@@ -20,23 +22,28 @@ Prochaine action : ouvrir une nouvelle session et lancer `/grill-with-docs` sur 
   - Suivi des issues configuré en Markdown local (`.scratch/`), décisions dans `docs/decisions` (`docs/agents/`).
 - **Méthode** reprise dans `docs/methode.md`, avec le skill à invoquer à chaque étape et à chaque temps du cycle.
 - Claude Code à jour : version 2.1.300 (le cadrage demandait de mettre à jour la 2.1.114).
+- **Grill du périmètre V1** : décision 09 (V1 complète sauf Khadidiatou, lancement manuel, aucun envoi de mail, migration avancée en étape 7, dossier de données `OneDrive - ONLYNNOV\maximus\` créé), glossaire `CONTEXT.md`, `CLAUDE.md` et `docs/methode.md` alignés.
+- **Spec V1** écrite : `.scratch/maximus-v1/spec.md` (109 user stories, deux points de test : planificateur et API locale).
 - **Points en suspens tranchés** (décision 08) : pas de handoff, logo-design désinstallé, règles Git écrites dans `CLAUDE.md` à la place du garde-fou, `.gitignore` créé (dépendances, secrets, données de Maximus).
 
 ## Reste à faire
 
-3. Spécification (en cours).
-4. Copie Notion de Roadmap 2026.2 et nouveau modèle de données, plus la base Récurrences.
+Ordre révisé par la décision 09.
+
+3. Spécification (en cours : relecture, puis tickets).
+4. Copie Notion de Roadmap 2026.2, nouveau modèle de données, base Récurrences.
 5. Moteur du matin, en lecture seule.
-6. Écritures validées.
-7. Logo.
-8. Tableau de bord local.
-9. Chat.
-10. Débrief du soir et tâche planifiée.
-11. Semaine d'essai, puis migration de la base partagée.
+6. Écritures validées sur la copie, page brute de validation.
+7. Migration de la base partagée.
+8. Logo.
+9. Tableau de bord local et raccourci du bureau.
+10. Chat.
+11. Débrief du soir.
+12. Semaine d'essai sur la base partagée.
 
 ## Points en suspens
 
-- **logo-design à réauditer à l'étape 7** avant toute réinstallation (désinstallé le 15 octobre).
-- **Noms des dossiers de données à confirmer.** Le `.gitignore` couvre des noms probables (`data/`, `fiches-reunions/`, `journal/`, etc.). Quand le moteur fixera les vrais chemins, vérifier qu'ils y sont.
-- **Deux plans de construction.** `docs/decisions/07-plan-de-construction.md` (10 lignes) et les 11 étapes de `docs/methode.md` ne sont pas découpés pareil. La méthode fait foi pour l'ordre ; le fichier 07 est à aligner (ou à marquer comme remplacé).
+- **logo-design à réauditer à l'étape 8** avant toute réinstallation (désinstallé le 15 octobre).
+- **Noms des dossiers de données** fixés par la décision 09 et repris dans le `.gitignore` (ancrés à la racine). Les revérifier si le moteur en ajoute.
+- **Inconnues à mesurer dès l'étape 5** (décision 06) : quota d'usage, latence du chat, écriture en mode non interactif. Si l'écriture non interactive échoue, l'étape 6 bloque tout le reste.
 - **Version des skills.** Les skills du dépôt sont figés en 1.2.3. Une mise à jour du plugin ne les change pas : refaire un audit avant de les remplacer.
