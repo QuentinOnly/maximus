@@ -45,6 +45,20 @@ Maquette v2 validée (Matin, Soir, Semaine) sur le canvas [Maximus](https://clau
 
 Le moteur passe avant l'interface : une interface sans données réelles ne se teste pas. Voir [07-plan-de-construction.md](docs/decisions/07-plan-de-construction.md).
 
+## Agent skills
+
+### Issue tracker
+
+Specs et issues en Markdown local dans `.scratch/<sujet>/`, rien sur GitHub Issues. Voir `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Les cinq rôles par défaut (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`), écrits dans la ligne `Status:` de chaque issue. Voir `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Un seul contexte : glossaire dans `CONTEXT.md`, décisions dans `docs/decisions/` (jamais `docs/adr/`), numérotées `NN-slug.md` à la suite et ajoutées à l'index. Voir `docs/agents/domain.md`.
+
 ## Conventions
 
 - Jamais de tiret cadratin (U+2014) dans aucun texte, document ou interface produits : code, commentaires, documentation, commits, messages et contenus générés par l'agent compris.
