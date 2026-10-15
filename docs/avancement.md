@@ -6,9 +6,9 @@ Dernière mise à jour : 15 octobre 2026.
 
 ## Étape en cours
 
-**Étape 4 : copie Notion et nouveau modèle.** Ticket `.scratch/maximus-v1/issues/01-copie-notion-nouveau-modele.md`. Terminé quand la copie de Roadmap 2026.2 a les nouveaux champs et la base Récurrences, et que la base partagée est intacte.
+**Étape 5 : moteur du matin, en lecture seule.** Premier ticket : `.scratch/maximus-v1/issues/02-premier-trace-analyse-agenda.md` (aucun blocage).
 
-Prochaine action : ouvrir une nouvelle session, lire ce fichier, puis traiter le ticket 01 en mode plan (aucun skill adapté). Le ticket 02 (premier tracé de l'analyse) n'a aucun blocage et peut suivre ou se faire en parallèle.
+Prochaine action : ouvrir une nouvelle session, lire ce fichier, puis traiter le ticket 02. Les réglages de Notion (copie de test et base partagée) sont dans `reglages.json` du dossier de données ; toute écriture vise la copie.
 
 ## Fait
 
@@ -22,14 +22,14 @@ Prochaine action : ouvrir une nouvelle session, lire ce fichier, puis traiter le
 - Claude Code à jour : version 2.1.300 (le cadrage demandait de mettre à jour la 2.1.114).
 - **Grill du périmètre V1** : décision 09 (V1 complète sauf Khadidiatou, lancement manuel, aucun envoi de mail, migration avancée en étape 7, dossier de données `OneDrive - ONLYNNOV\maximus\` créé), glossaire `CONTEXT.md`, `CLAUDE.md` et `docs/methode.md` alignés.
 - **Étape 3 : spécification.** Spec `.scratch/maximus-v1/spec.md` (deux points de test : planificateur et API locale), relue par Quentin, complétée par la décision 10 (garde-fous de l'analyse), découpée en 24 tickets dans `.scratch/maximus-v1/issues/` avec leurs blocages.
+- **Étape 4 : copie Notion et nouveau modèle** (ticket 01, décision 11). Copie « Roadmap 2026.2 [TEST Maximus] » dans les pages privées de Quentin : Échéance renommée en Planifié le, nouvelles propriétés Échéance, Ferme, Impact, Estimation (h), Temps réel (h), Source ; Impact et Estimation remplis pour les 52 tâches de Quentin ; base Récurrences créée vide. Base partagée vérifiée intacte avant et après (empreinte identique).
 - **Points en suspens tranchés** (décision 08) : pas de handoff, logo-design désinstallé, règles Git écrites dans `CLAUDE.md` à la place du garde-fou, `.gitignore` créé (dépendances, secrets, données de Maximus).
 
 ## Reste à faire
 
 Ordre révisé par la décision 09. Tickets 01 à 24 dans `.scratch/maximus-v1/issues/`.
 
-4. Copie Notion de Roadmap 2026.2, nouveau modèle de données, base Récurrences (en cours, ticket 01).
-5. Moteur du matin, en lecture seule.
+5. Moteur du matin, en lecture seule (en cours, ticket 02).
 6. Écritures validées sur la copie, page brute de validation.
 7. Migration de la base partagée.
 8. Logo.
@@ -43,4 +43,7 @@ Ordre révisé par la décision 09. Tickets 01 à 24 dans `.scratch/maximus-v1/i
 - **logo-design à réauditer à l'étape 8** avant toute réinstallation (désinstallé le 15 octobre).
 - **Noms des dossiers de données** fixés par la décision 09 et repris dans le `.gitignore` (ancrés à la racine). Les revérifier si le moteur en ajoute.
 - **Inconnues à mesurer dès l'étape 5** (décision 06) : quota d'usage, latence du chat, écriture en mode non interactif. Si l'écriture non interactive échoue, l'étape 6 bloque tout le reste.
+- **Limites du connecteur Notion sans l'offre Business** (décision 11) : pas de requête SQL sur plusieurs bases, requêtes SQL plafonnées, code des formules illisible. À mesurer à l'étape 5 ; l'adaptation des formules (ticket 16) passe par l'interface Notion.
+- **Boutons « Création rapide » de la copie** : le connecteur ne les lit pas. Ne pas s'en servir tant que Quentin n'a pas vérifié dans Notion qu'ils créent bien dans la copie.
+- **Statut des tickets terminés** : aucune valeur prévue dans `docs/agents/triage-labels.md` ; le ticket 01 porte `done`. À valider ou à remplacer.
 - **Version des skills.** Les skills du dépôt sont figés en 1.2.3. Une mise à jour du plugin ne les change pas : refaire un audit avant de les remplacer.
