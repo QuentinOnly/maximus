@@ -1,6 +1,6 @@
 # 01: Copie de Roadmap 2026.2 au nouveau modèle
 
-**Status:** done
+**Status:** resolved
 
 **À construire :** Une copie de la base Notion Roadmap 2026.2 existe, avec les nouvelles propriétés de la décision 03 et une base Récurrences. Elle sert de terrain de test à toutes les écritures jusqu'à la migration (ticket 16). La base partagée de l'équipe n'est pas touchée. Étape 4.
 

@@ -10,7 +10,8 @@ Spec : `.scratch/maximus-v1/spec.md`.
 
 - [ ] Le plan de migration est validé par Quentin en mode plan avant toute modification
 - [ ] Nouvelles propriétés et base Récurrences ajoutées à la base partagée ; Impact rempli depuis Priorité selon la correspondance validée au ticket 1
-- [ ] Formules Heures, Semaine et Suivi du jour adaptées, page de suivi de charge de Khadidiatou adaptée et vérifiée
+- [ ] Formules adaptées à la main dans l'interface Notion, car le connecteur ne lit pas leur code (décision 11) : Heures, Semaine, Suivi du jour, Lundi et Avancement (base Tâches), puis contrôle de Progress bar (base Projets). Chacune est relue après le renommage d'Échéance en Planifié le et l'ajout d'Estimation (h)
+- [ ] Page de suivi de charge de Khadidiatou adaptée et vérifiée
 - [ ] Les vues de l'équipe fonctionnent après migration
 - [ ] Les réglages de Maximus pointent vers la base partagée
 - [ ] L'ancienne propriété Priorité est conservée tant que Quentin n'a pas décidé de la retirer

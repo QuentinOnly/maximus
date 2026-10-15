@@ -14,4 +14,8 @@ Spec : `.scratch/maximus-v1/spec.md`.
 - [ ] Une tâche sans échéance prend la fin de sa plage comme échéance souple
 - [ ] La jauge de capacité suit les seuils de la décision 05 (neutre sous 50 %, ambre de 50 à 80 %, rouge au-delà)
 - [ ] Tests du planificateur : lundi contre mardi, rendez-vous qui chevauche la pause, rendez-vous terminé, journée pleine, tâche sans échéance
+- [ ] Une tâche sans estimation est exclue du calcul de capacité, marquée « à compléter » sur la page, et l'analyse propose une estimation (raccourcis XS 1 h, S 2 h, M 4 h, L 7 h)
+- [ ] Une tâche sans impact est marquée « à compléter » sur la page, et l'analyse propose un impact (Faible, Moyen, Fort)
+- [ ] Proposition unique, tant que Quentin n'y a pas répondu : lister les tâches ouvertes de Quentin qui ont un Planifié le et pas d'Échéance, et lui demander lesquelles ont une échéance ferme. Les anciennes dates sont passées dans Planifié le à la copie (décision 11). La réponse est mémorisée ; l'écriture de l'Échéance et de Ferme se fait à l'étape 6, après validation
+- [ ] Tests du planificateur : tâche sans estimation exclue de la capacité et marquée « à compléter », tâche sans impact marquée « à compléter »
 - [ ] Les tâches sont lues dans la copie Notion, jamais dans la base partagée

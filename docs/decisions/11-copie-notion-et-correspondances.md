@@ -10,3 +10,9 @@
 - **Récurrences** : Titre, Fréquence (Quotidienne, Hebdomadaire, Mensuelle, Trimestrielle, Annuelle), Jour (texte libre), Charge (h), Délai de préparation (j). Créée vide dans la copie.
 - **Limite constatée** : sans l'offre Notion Business, le connecteur refuse les requêtes SQL qui croisent plusieurs bases et plafonne les requêtes SQL sur une base. Le moteur interroge donc une base à la fois et ménage ces requêtes (à mesurer à l'étape 5).
 - **Non lu** : le code des formules Heures, Semaine, Suivi du jour, Lundi et Avancement n'est pas lisible par le connecteur. Leur adaptation (ticket 16) passe par l'interface Notion.
+
+## Complément du 15 octobre 2026 (retours de Quentin sur le ticket 01)
+
+- **Tâche sans estimation** : exclue du calcul de capacité, marquée « à compléter », l'analyse propose une estimation. **Tâche sans impact** : marquée « à compléter », l'analyse propose un impact. Repris dans le ticket 03.
+- **Échéances fermes à retrouver** : les anciennes dates étant passées dans Planifié le, l'analyse de l'étape 5 fait une proposition unique qui demande à Quentin quelles tâches ont une échéance ferme. Repris dans le ticket 03.
+- **Statut d'un ticket terminé** : `resolved`, la valeur déjà définie dans `docs/agents/issue-tracker.md`, `triage-labels.md` n'en prévoyant aucune.
