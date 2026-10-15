@@ -2,7 +2,7 @@ Status: ready-for-agent
 
 # Spec : Maximus V1
 
-Issue du grill du 15 octobre 2026. Décisions de référence : `docs/decisions/01` à `09` (la 09 fait foi en cas d'écart). Vocabulaire : `CONTEXT.md`.
+Issue du grill du 15 octobre 2026. Décisions de référence : `docs/decisions/01` à `10` (la 10 puis la 09 font foi en cas d'écart). Vocabulaire : `CONTEXT.md`.
 
 ## Problème
 
@@ -36,7 +36,7 @@ Critère de réussite : aucune tâche créée à la main, rien d'oublié, un age
 13. En tant que Quentin, je veux que chaque mail reçu soit classé dans un couloir (Action, À surveiller, Écarté), afin de ne plus fouiller ma boîte.
 14. En tant que Quentin, je veux que chaque mail écarté porte sa raison, afin de pouvoir vérifier que Maximus n'a rien jeté à tort.
 15. En tant que Quentin, je veux que le statut lu ou non lu ne compte pas, afin qu'un mail ouvert puis oublié soit traité comme les autres.
-16. En tant que Quentin, je veux que tous les dossiers de ma boîte soient lus, courrier indésirable compris, afin qu'un mail mal classé par Outlook ne se perde pas.
+16. En tant que Quentin, je veux que tous les dossiers de ma boîte soient lus, sauf le courrier indésirable, afin qu'un mail rangé par une règle Outlook ne se perde pas sans que les mails piégés soient jamais lus.
 17. En tant que Quentin, je veux que les éléments supprimés soient ignorés, afin que ce que j'ai jeté ne revienne pas.
 18. En tant que Quentin, je veux qu'un mail du couloir Action devienne une proposition de tâche complète, afin de ne plus saisir de tâche à la main.
 19. En tant que Quentin, je veux qu'un engagement pris dans un mail envoyé (« c'est noté », « je reviens vers vous ») devienne une proposition de tâche, afin de tenir ce que j'ai promis.
@@ -47,13 +47,15 @@ Critère de réussite : aucune tâche créée à la main, rien d'oublié, un age
 
 ### Factures
 
-24. En tant que Quentin, je veux que chaque facture reçue par mail soit reconnue, quel que soit l'expéditeur, afin de ne plus en oublier aucune.
+24. En tant que Quentin, je veux que chaque facture reçue par mail soit repérée, quel que soit l'expéditeur, afin de ne plus en oublier aucune.
 25. En tant que Quentin, je veux une liste d'expéditeurs de factures amorcée sur les trois derniers mois et que je valide une fois, afin que la détection soit fiable dès le départ.
 26. En tant que Quentin, je veux qu'un nouvel expéditeur de factures devienne une proposition d'ajout à la liste, afin que la liste grandisse sans que je la tienne à la main.
 27. En tant que Quentin, je veux que les mails de facture sortent des couloirs, afin qu'ils n'encombrent pas mes actions.
 28. En tant que Quentin, je veux une seule tâche ouverte « Factures à déposer », avec le nombre de factures et leurs liens, à faire dans la journée, afin de toutes les déposer d'un coup dans Pennylane.
 29. En tant que Quentin, je veux que chaque nouvelle facture soit une proposition de mise à jour de cette tâche (compteur, lien, échéance au jour même), afin qu'aucune modification ne se fasse sans mon accord.
 30. En tant que Quentin, je veux qu'une fois la tâche passée en Terminé, la facture suivante propose une nouvelle tâche, afin de ne jamais rouvrir une tâche close.
+30 bis. En tant que Quentin, je veux qu'une facture d'un expéditeur hors de la liste validée devienne une proposition « Facture à vérifier », qui n'entre jamais directement dans la tâche groupée, afin qu'une fausse facture ne se glisse pas dans mes paiements.
+30 ter. En tant que Quentin, je veux, sur une facture à vérifier, choisir de l'ajouter à la tâche groupée (et éventuellement son expéditeur à la liste) ou de l'écarter, afin de décider moi-même de ce qui est légitime.
 
 ### Wispr et réunions
 
@@ -170,14 +172,20 @@ Critère de réussite : aucune tâche créée à la main, rien d'oublié, un age
 108. En tant que Quentin, je veux que la base partagée migre dès que les écritures sont validées sur la copie, avec les formules Heures, Semaine, Suivi du jour et la page de suivi de charge adaptées, afin de travailler pour de vrai sans priver l'équipe de la vue sur mes tâches.
 109. En tant que Quentin, je veux utiliser l'analyse du matin dès qu'elle existe, même en lecture seule, afin de profiter de Maximus avant qu'il soit fini.
 
+### Sécurité de l'analyse
+
+110. En tant que Quentin, je veux que, pendant l'analyse, Claude n'ait accès qu'à une liste blanche d'outils de lecture imposée par la configuration, afin qu'aucun contenu lu ne puisse déclencher une écriture, un envoi ou une suppression.
+111. En tant que Quentin, je veux qu'une consigne écrite dans un mail, un transcript ou un fichier soit traitée comme une donnée et jamais suivie, afin qu'un tiers ne puisse pas piloter Maximus.
+112. En tant que Quentin, je veux que chaque écriture se fasse dans un appel distinct, déclenché par mon clic, avec le seul outil d'écriture nécessaire, afin que le pouvoir d'écrire ne soit jamais disponible pendant la lecture.
+
 ## Décisions d'implémentation
 
 ### Modules
 
 - **Planificateur** (module pur, le cœur testé). Entrée : une photo du jour (tâches, événements, récurrences, heure exacte de Paris, horaires de travail, plan validé précédent). Sortie : un plan (capacité et heures libres, part planifiable à 70 %, créneaux proposés avec leur disponibilité, pression de chaque tâche longue, Top 3 ordonné sans ex aequo, jauges du jour et de la semaine, alertes de surcharge, écarts au plan validé). Aucun accès réseau, aucun appel à Claude, aucune horloge implicite : l'heure fait partie de l'entrée.
-- **Adaptateur Claude**. Seul module qui lance `claude -p`, avec l'heure exacte et le fuseau Europe/Paris dans chaque appel. Il demande des sorties JSON conformes à des schémas fixés (mails classés, engagements, actions Wispr, factures détectées, brouillons, récurrences détectées, traces, réponses du chat) et rejette toute sortie non conforme. Les connecteurs claude.ai (Microsoft 365, Notion, Wispr Flow) sont utilisés à travers lui, en lecture pendant l'analyse.
+- **Adaptateur Claude**. Seul module qui lance `claude -p`, avec l'heure exacte et le fuseau Europe/Paris dans chaque appel. Chaque appel d'analyse reçoit une liste blanche d'outils de lecture nommés un par un, imposée par les options de l'appel (outils autorisés et refusés, aucun mode de permission qui élargisse la liste) ; les appels d'écriture, lancés par l'écrivain après un clic, ne reçoivent que l'outil d'écriture concerné. Les contenus lus sont transmis comme données délimitées, et les sorties ne sont acceptées que si elles respectent le schéma attendu. Il demande des sorties JSON conformes à des schémas fixés (mails classés, engagements, actions Wispr, factures détectées, brouillons, récurrences détectées, traces, réponses du chat) et rejette toute sortie non conforme. Les connecteurs claude.ai (Microsoft 365, Notion, Wispr Flow) sont utilisés à travers lui, en lecture pendant l'analyse.
 - **Analyse**. Orchestration d'un lancement : lit les sources par l'adaptateur Claude et le dossier synchronisé, compare avec la mémoire de traitement, produit la photo du jour, appelle le planificateur, puis génère les propositions. Une source en échec est signalée et n'arrête pas les autres.
-- **Propositions**. Un journal des propositions avec leur cycle de vie (en attente, approuvée, rejetée, écrite, en échec). Types : créer une tâche, mettre à jour une tâche, clore une tâche, poser un créneau, déplacer ou retirer un créneau, créer un brouillon, ajouter un expéditeur de factures, instance de récurrence. Chaque proposition garde son entrée d'origine. Une proposition rejetée est mémorisée pour ne pas revenir.
+- **Propositions**. Un journal des propositions avec leur cycle de vie (en attente, approuvée, rejetée, écrite, en échec). Types : créer une tâche, mettre à jour une tâche, clore une tâche, poser un créneau, déplacer ou retirer un créneau, créer un brouillon, ajouter un expéditeur de factures, facture à vérifier, instance de récurrence. Chaque proposition garde son entrée d'origine. Une proposition rejetée est mémorisée pour ne pas revenir.
 - **Écrivain**. Interface unique de toutes les écritures (Notion, agenda Outlook, brouillons Outlook). Il n'accepte qu'une proposition approuvée et refuse toute autre demande. Il n'existe aucune opération d'envoi de mail.
 - **Mémoire**. Fichiers du dossier de données : mails traités, propositions rejetées, heure de la dernière analyse, registre des créneaux (identifiant d'événement Outlook relié à la tâche), traces, transcripts déjà analysés.
 - **Serveur local**. Node.js v24, sert l'interface et une API locale : état du jour, lancer l'analyse (avec option de refaire le Top 3), liste des propositions, approuver, rejeter, corriger une proposition, valider un lot, débrief, semaine, réunions, traces, récurrences, réglages, chat.
@@ -204,8 +212,8 @@ Critère de réussite : aucune tâche créée à la main, rien d'oublié, un age
 
 - Aucune écriture sans clic. Le chat produit des cartes de proposition ; le texte tapé n'écrit jamais.
 - Validation en lot pour les récurrences et les factures.
-- Factures : détection par contenu, renforcée par la liste d'expéditeurs ; une seule tâche groupée ouverte ; chaque facture est une proposition de mise à jour.
-- Mails : premier lancement depuis le dernier jour ouvré à 8 h 30, puis reprise à l'heure exacte de l'analyse précédente ; tous les dossiers sauf les éléments supprimés.
+- Factures : détection par contenu ; seule une facture d'un expéditeur de la liste validée devient une proposition de mise à jour de la tâche groupée ; toute autre devient une facture à vérifier ; une seule tâche groupée ouverte.
+- Mails : premier lancement depuis le dernier jour ouvré à 8 h 30, puis reprise à l'heure exacte de l'analyse précédente ; tous les dossiers sauf le courrier indésirable et les éléments supprimés.
 - Relance en journée : nouveautés et écarts seulement, Top 3 inchangé sauf demande.
 
 ### Découpage en lots (ordre de `docs/methode.md`)
@@ -226,7 +234,8 @@ Le détail en tickets vient de `/to-tickets`.
 
 - Un bon test vérifie un comportement observable depuis l'extérieur du module (entrée, sortie, effets demandés à l'écrivain), jamais la manière dont le code y parvient. Un test ne doit pas casser lors d'une refactorisation qui garde le comportement.
 - **Point de test 1 : le planificateur.** Testé en profondeur, cas par cas, avec des photos du jour écrites à la main : lundi contre mardi, rendez-vous qui chevauche la pause, rendez-vous déjà terminé à l'heure du lancement, journée pleine, tâche sans échéance, pression à 49 % et à 51 %, Top 3 avec des candidats à égalité, échéance ferme menacée, écarts au plan validé.
-- **Point de test 2 : l'API du serveur local**, avec l'adaptateur Claude remplacé par un adaptateur simulé qui rejoue des sorties JSON enregistrées, et l'écrivain remplacé par un écrivain simulé qui enregistre les demandes. Cas couverts : circuit analyse, propositions, approbation, écriture ; aucune écriture sans approbation ; proposition rejetée qui ne revient pas ; mail déjà traité ignoré ; reprise à l'heure de la dernière analyse ; tâche groupée des factures (mise à jour, puis nouvelle tâche après Terminé) ; lot des récurrences ; registre des créneaux (créneau déplacé à la main non recréé) ; source en échec signalée sans bloquer l'analyse ; sortie Claude non conforme rejetée.
+- **Point de test 2 : l'API du serveur local**, avec l'adaptateur Claude remplacé par un adaptateur simulé qui rejoue des sorties JSON enregistrées, et l'écrivain remplacé par un écrivain simulé qui enregistre les demandes. Cas couverts : circuit analyse, propositions, approbation, écriture ; aucune écriture sans approbation ; proposition rejetée qui ne revient pas ; mail déjà traité ignoré ; reprise à l'heure de la dernière analyse ; tâche groupée des factures (mise à jour, puis nouvelle tâche après Terminé) ; lot des récurrences ; registre des créneaux (créneau déplacé à la main non recréé) ; source en échec signalée sans bloquer l'analyse ; sortie Claude non conforme rejetée ; facture d'un expéditeur hors liste qui devient « à vérifier » et n'atteint jamais la tâche groupée sans décision ; courrier indésirable jamais demandé aux sources.
+- **Configuration des appels Claude** : test de l'adaptateur qui vérifie qu'un appel d'analyse ne reçoit que les outils de la liste blanche et qu'un appel d'écriture ne reçoit que l'outil demandé. La résistance réelle à une consigne cachée dans un mail se vérifie à la main à l'étape 5, avec un mail de test envoyé à Quentin.
 - Les tests ne touchent jamais Notion, Outlook ni Claude réels. Les données de test sont fictives et vivent dans le dépôt ; aucune donnée réelle n'y entre.
 - Non testé automatiquement : le jugement de Claude (couloirs, engagements, actions Wispr, style des brouillons). Vérifié par Quentin sur de vrais matins, au temps 4 du cycle.
 - Les écritures réelles sont vérifiées une fois à l'étape 6, sur la copie Notion et l'agenda de Quentin.

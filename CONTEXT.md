@@ -51,7 +51,11 @@ _Éviter_ : log, historique (réservé à l'historique du chat)
 ## Mails
 
 **Facture à déposer** :
-Une facture reçue par mail automatique d'un outil, que Quentin doit télécharger et importer dans Pennylane. Toutes alimentent une seule tâche groupée.
+Une facture reçue par mail automatique d'un outil, que Quentin doit télécharger et importer dans Pennylane. Seules celles d'un expéditeur de la liste validée alimentent la tâche groupée.
+_Éviter_ : justificatif
+
+**Facture à vérifier** :
+Une facture détectée dont l'expéditeur n'est pas dans la liste validée. Elle n'entre dans la tâche groupée qu'après décision de Quentin.
 
 **Couloir** :
 Le classement d'un mail reçu : Action, À surveiller, ou Écarté (toujours avec une raison).

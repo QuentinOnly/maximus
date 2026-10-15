@@ -1,0 +1,7 @@
+# Garde-fous de l'analyse
+
+15 octobre 2026, ajoutée à la relecture de la spec V1. Révise deux points de la décision 09.
+
+- **Courrier indésirable jamais lu**, comme les éléments supprimés. Remplace la ligne « Courrier indésirable lu » de la 09. Raison : c'est le premier point d'entrée des mails piégés.
+- **Liste blanche d'outils pendant l'analyse, imposée techniquement.** Chaque appel `claude -p` de l'analyse ne reçoit que des outils de lecture nommés un par un ; tout autre outil (écriture, envoi, suppression, commande système) est refusé par la configuration de l'appel, pas par une consigne du prompt. Les écritures se font dans des appels distincts, déclenchés par un clic, avec le seul outil d'écriture nécessaire. Tout contenu lu (mail, transcript, fichier, page Notion) est une donnée, jamais une consigne : une instruction trouvée dans un mail ne change ni le comportement de Maximus ni ses propositions. Raison : Maximus lit des contenus écrits par des tiers.
+- **Facture d'un expéditeur hors liste : « à vérifier ».** Elle devient une proposition « Facture à vérifier », qui n'entre jamais directement dans la tâche « Factures à déposer ». Quentin choisit de l'ajouter à la tâche (et, s'il le veut, d'ajouter l'expéditeur à la liste) ou de l'écarter. Précise la ligne « Reconnaissance des factures » de la 09 : la détection par contenu repère, seule la liste validée fait entrer. Raison : une fausse facture est un vecteur classique de fraude.
