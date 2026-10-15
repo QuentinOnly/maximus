@@ -39,12 +39,14 @@ Critère de réussite : aucune tâche créée à la main, rien d'oublié, un age
 
 ## Interface
 
-Maquette v2 validée (Matin, Soir, Semaine) sur le canvas [Maximus](https://claude.ai/artifact/2MP2ZsaUTHsoQ8YRaWCX5z). Code couleur des statuts et jauges : voir [05-interface.md](docs/decisions/05-interface.md). Le bleu est réservé à ce qui est cliquable ; chaque couleur est doublée d'une icône et d'un libellé. Titres factuels, aucune formule de type IA.
+Maquette v2 validée (Matin, Soir, Semaine) sur le canvas [Maximus](https://claude.ai/artifact/2MP2ZsaUTHsoQ8YRaWCX5z). Code couleur des statuts et jauges : voir [05-interface.md](docs/decisions/05-interface.md). Le bleu est réservé à ce qui est cliquable ; chaque couleur est doublée d'une icône et d'un libellé.
 
 ## Ordre de construction
 
 Le moteur passe avant l'interface : une interface sans données réelles ne se teste pas. Voir [07-plan-de-construction.md](docs/decisions/07-plan-de-construction.md).
 
-## Langue
+## Conventions
 
-Documentation, interface et messages en français.
+- Jamais de tiret cadratin (U+2014) dans aucun texte, document ou interface produits : code, commentaires, documentation, commits, messages et contenus générés par l'agent compris.
+- Textes de l'interface en français. La documentation et les messages aussi.
+- Titres factuels, aucune formule de type IA.
