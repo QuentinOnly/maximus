@@ -20,6 +20,7 @@ Prochaine action : ouvrir une nouvelle session et lancer `/grill-with-docs` sur 
   - Suivi des issues configuré en Markdown local (`.scratch/`), décisions dans `docs/decisions` (`docs/agents/`).
 - **Méthode** reprise dans `docs/methode.md`, avec le skill à invoquer à chaque étape et à chaque temps du cycle.
 - Claude Code à jour : version 2.1.300 (le cadrage demandait de mettre à jour la 2.1.114).
+- **Points en suspens tranchés** (décision 08) : pas de handoff, logo-design désinstallé, règles Git écrites dans `CLAUDE.md` à la place du garde-fou, `.gitignore` créé (dépendances, secrets, données de Maximus).
 
 ## Reste à faire
 
@@ -35,9 +36,7 @@ Prochaine action : ouvrir une nouvelle session et lancer `/grill-with-docs` sur 
 
 ## Points en suspens
 
-- **Changement de session sans handoff.** Le skill est écarté, le passage repose sur ce fichier. À trancher : s'en contenter, ou créer une version de handoff qui écrit dans le dépôt.
-- **Logo (étape 7) sans skill.** logo-design est écarté du projet mais reste installé pour le compte de Quentin. À trancher avant l'étape 7 : le désinstaller, ou l'accepter tel quel pour cette seule étape.
-- **Garde-fou git non activé.** `/git-guardrails-claude-code` bloquerait aussi `git push` et demande `jq`, absent du poste. À décider avant la première session de code.
-- **`.gitignore` à créer** dès la première session de code, pour qu'aucune donnée (mail, transcript, fiche réunion) n'arrive sur GitHub.
+- **logo-design à réauditer à l'étape 7** avant toute réinstallation (désinstallé le 15 octobre).
+- **Noms des dossiers de données à confirmer.** Le `.gitignore` couvre des noms probables (`data/`, `fiches-reunions/`, `journal/`, etc.). Quand le moteur fixera les vrais chemins, vérifier qu'ils y sont.
 - **Deux plans de construction.** `docs/decisions/07-plan-de-construction.md` (10 lignes) et les 11 étapes de `docs/methode.md` ne sont pas découpés pareil. La méthode fait foi pour l'ordre ; le fichier 07 est à aligner (ou à marquer comme remplacé).
 - **Version des skills.** Les skills du dépôt sont figés en 1.2.3. Une mise à jour du plugin ne les change pas : refaire un audit avant de les remplacer.

@@ -60,7 +60,7 @@ Une session par ligne. Ne passe à la suivante que lorsque le critère de fin es
 | 4 | Copie Notion et nouveau modèle | La copie de Roadmap 2026.2 a les nouveaux champs et la base Récurrences, la base partagée est intacte | Aucun skill adapté : cycle normal avec le mode plan |
 | 5 | Moteur du matin, en lecture seule | Une analyse réelle de ta matinée, propositions affichées, rien écrit nulle part | `/implement` (avec `/tdd`), `/prototype` si la logique de tri doit être testée avant |
 | 6 | Écritures validées | Une tâche créée dans la copie Notion après ton clic, test écrit en mode automatique | `/implement` (avec `/tdd`), `/diagnosing-bugs` si l'écriture en mode automatique échoue |
-| 7 | Logo | Un logo validé, décliné en icône pour la bulle et la barre latérale | Aucun skill installé dans le projet (voir la note sur `logo-design`) |
+| 7 | Logo | Un logo validé, décliné en icône pour la bulle et la barre latérale | Aucun skill installé : réauditer `logo-design` avant de le réinstaller (décision 08) |
 | 8 | Tableau de bord local | Les écrans Matin, Soir et Semaine fonctionnent avec tes vraies données | `/prototype` pour comparer des variantes d'écran, puis `/implement` |
 | 9 | Chat | Créer une tâche et retrouver une action passée marchent depuis la bulle | `/implement` (avec `/tdd`) |
 | 10 | Débrief du soir et tâche planifiée | Le rituel complet tourne seul à l'ouverture de session | `/implement` (avec `/tdd`) |
@@ -98,7 +98,7 @@ Copiés depuis mattpocock/skills, version 1.2.3 (commit `c55ee46`), audités le 
 | Skill | Raison |
 |---|---|
 | `handoff` | Il enregistre son résumé dans le dossier temporaire de Windows, donc hors du projet |
-| `logo-design` | Ses scripts écrivent des fichiers temporaires hors du projet et lancent Chrome en arrière-plan. Il reste installé pour ton compte depuis le 15 octobre |
+| `logo-design` | Ses scripts écrivent des fichiers temporaires hors du projet et lancent Chrome en arrière-plan. Désinstallé le 15 octobre, à réauditer à l'étape 7 (décision 08) |
 | `qa` | N'existe plus dans mattpocock/skills : remplacé par `triage` et `to-tickets` |
 
 ## Sécurité et données

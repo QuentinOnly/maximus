@@ -9,5 +9,6 @@ Reprise du document « Maximus : décisions de cadrage » du 15 octobre 2026 (Qu
 5. [Interface](05-interface.md)
 6. [Inconnues et questions ouvertes](06-inconnues-et-questions-ouvertes.md)
 7. [Plan de construction](07-plan-de-construction.md)
+8. [Outillage et règles Git](08-outillage-et-git.md) (15 octobre 2026)
 
 Toute nouvelle décision ou révision s'ajoute ici, datée, plutôt que de réécrire l'historique en silence.

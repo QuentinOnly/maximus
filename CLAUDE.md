@@ -29,6 +29,14 @@ Critère de réussite : aucune tâche créée à la main, rien d'oublié, un age
 - Chaque lancement transmet l'heure exacte et le fuseau Europe/Paris ; filtrer sur l'heure, pas seulement sur la date.
 - Notion « Roadmap 2026.2 » est la source de vérité des tâches. Tout changement de modèle se teste d'abord sur une copie de la base, jamais directement sur la base partagée de l'équipe.
 
+## Git
+
+- Jamais de `git push --force` (ni `--force-with-lease`).
+- Jamais de suppression de branche, locale ou distante.
+- Jamais de réécriture de l'historique : pas de `rebase`, `commit --amend`, `reset` sur des commits existants, ni `filter-branch`.
+- `git push` uniquement quand Quentin le demande. Les commits restent locaux sinon.
+- Aucune donnée de Maximus dans le dépôt : le `.gitignore` les exclut, le vérifier avant chaque commit qui ajoute des fichiers.
+
 ## Architecture
 
 - **Moteur** : Claude Code natif Windows, appelé en mode non interactif (`claude -p`).

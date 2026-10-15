@@ -1,0 +1,42 @@
+# Dépendances et sorties de build
+node_modules/
+dist/
+build/
+.vite/
+*.log
+npm-debug.log*
+
+# Environnement et secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+secrets/
+credentials*.json
+token*.json
+
+# Réglages locaux de Claude Code
+.claude/settings.local.json
+
+# Données de Maximus : jamais sur GitHub (elles vivent dans OneDrive)
+data/
+donnees/
+fiches-reunions/
+journal/
+profil-style/
+memoire/
+historique-chat/
+chat/
+exports-mails/
+mails/
+transcripts/
+*.eml
+*.msg
+
+# Système
+.DS_Store
+Thumbs.db
+desktop.ini
